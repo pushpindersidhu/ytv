@@ -8,7 +8,7 @@ function changeUserAgent (request) {
   return { requestHeaders: request.requestHeaders }
 }
 
-browser.webRequest.onBeforeSendHeaders.addListener(
+chrome.webRequest.onBeforeSendHeaders.addListener(
     changeUserAgent,
     {urls: ["*://*.youtube.com/tv*"]},
     ["blocking", "requestHeaders"]
